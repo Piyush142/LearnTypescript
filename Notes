@@ -1,0 +1,71 @@
+# Let's get started with Typescript
+
+## What is typescript?
+
+Its a superset of javascript
+A language building up on javascript
+It adds new features and advantages to javascript.
+
+Drawback
+Browsers can't excute typescript.
+
+Therefore typescript is compiled to javascript and then we can use it.
+It adds types to javascript which is one of the major feature of typescript.
+This gives us an opportunity to find errors in our code before time at runtime.
+
+## Type Script Overview
+
+1. Typescipt also understands features like interface and generics.
+2. Meta Programming features like Decorators
+3. Rich Configurable Options
+4. Types
+5. Next gen JavaScript features
+6. Modern Tooling helps even in Non-TypeScripts Projects
+
+## Core Types
+
+- number
+- string
+- boolean
+
+Typescript only helps you during developement before it is compiled.
+We can use typeof operator to infer the type of any variable.
+Javascript use 'dynamic type'(resolved at runtimes). While Typescript uses 'static types'(set during developement.)
+The core primitive types in TypeScript are all lowercase!
+
+## Type Assignments and Type Inference
+
+Type Inference (Matlab khud se type ka pata chal raha usko)
+Type Assignments ( matalab number1 = 5 assignments par usko type ka pata chal gaya)
+Example:
+let number1: number,
+number1 = 5
+
+Is case mein karna padega.
+
+## Object Type
+
+## Array Type
+
+## Working with Tuples
+
+When I only want any specific number of elements in an array
+For example:
+Jese role: [2, 'author']
+Ab mujhe bas ye dono he chahiye but typesciprt will infer this as special union type.
+where I can put number and string in this array to avoid this behaviour we use this
+concept.
+role: [number, string] and this will mark as a tuple for our object.
+
+## Working with Enums
+
+enums only exit in typescript not in javascript
+
+enum Role{
+Admin,Read_Only, Edit
+};
+
+## Any Type
+
+This is special type but should be avoided and is very flexible
+It takes all advantages of Typescript
