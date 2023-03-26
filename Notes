@@ -69,3 +69,110 @@ Admin,Read_Only, Edit
 
 This is special type but should be avoided and is very flexible
 It takes all advantages of Typescript
+
+## Union Types
+
+If we have multiple types to work with, we can use union types.
+
+## Literal Types
+
+When we are very clear about the value it should hold.
+For Example:
+const val = 2.8;
+
+Typescript will infer it as literal types.
+Literal types are mostly used in conjuction with Union Types.
+For Example:
+const role = 'admin' | 'user';
+
+## Type Alias or Custom Types
+
+We can use Type to define a custom type.
+
+## Function Return Types and Void
+
+Return type can be infered by typescript.
+
+For example:
+function add(n1: number, n2: number){
+return n1+n2;
+}
+Typescript will automatically be able to infer that this will return a number type.
+
+But we can also explicitly assing a function to return a number type.
+
+function add(n1: number, n2: number): number{
+return n1+n2;
+}
+
+It is considered to be a good practice to do typescript its type inference.
+
+Javascipt doesn't have void type, but typescipt have type 'void'.
+'undefined' is also a type in typescript.
+But functions are not allowed to return a undefined in typescript.
+
+## Functions as types
+
+let combineValues = (a: number, b: number) => number;
+
+Here in this syntax we are saying that combineValues is a function that will accept two arguments as a number type and then will return a number type. This is know as Function types. And they allow us to describe us which types of function we want to specifically use.
+
+## Function Types and Callbacks
+
+let combineVal = (n1: number, n2: number, callBack = (a: number) => void){
+let result = n1+n2;
+callBack(result);
+}
+
+let x = combineVal(5, 12, (result)=>{
+console.log(result);
+// return result;
+})
+
+Here I have defined a callBack function that will only take a number as an argument and will have a 'void' return type.
+In Comment I have returned the result but the typescript will not complain about this and will return something, by specifing void we specify that we will ignore anything that is returned by this function.
+Therefore parameters are enforced and it doesn't care about the return type.
+
+As you learned, callback functions can return something, even if the argument on which they're passed does NOT expect a returned value.
+
+## The Unknown Type
+
+let userInput: unknown;
+
+This type is used when we are not very certain about which type of datatype this is going to be, thatis the type is of unknown nature( for example: it can be a string, it can be a number).
+We can store anyvalue in the unknown type and typescript won't complain.
+
+So whats the difference with 'any' type?
+'unknown' is a bit more restrictive and while 'any' type is very flexible and can be used anywhere.
+
+For Example:
+let userInput: unknown;
+let userName = 'Sunny';
+
+userInput = 5;
+userInput = 'Max';
+userInput = userName; // This line will give error as unknown type cannot be assigned to string type.
+
+But if we were using any as a type this line won't give any error.
+We will need an extra type check if we want to assing it.
+
+if(typeof userName === 'string'){
+userInput = userName; // Because we are type checking before assing it, typescript won't complain.
+}
+
+You shouldn't use unknown all the time but it is better than type 'any'.
+
+## The 'never' Type
+
+Now consider an example where a function will break or not return anything. There we use type as never.
+
+For example:
+function generateError(message: string, code: number): never{
+throw {message: message, errorCode: code};
+}
+
+generateError('Unrestricted Area', 500);
+
+This will eventually break my script and will stop the further exceution. Therefore the return type is not 'void' but it is 'never'.
+
+A function with infinite loop is also an example.
