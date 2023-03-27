@@ -176,3 +176,62 @@ generateError('Unrestricted Area', 500);
 This will eventually break my script and will stop the further exceution. Therefore the return type is not 'void' but it is 'never'.
 
 A function with infinite loop is also an example.
+
+---
+
+## The Type Script Compiler
+
+### Watch Mode
+
+To Tell typescript whenever a file is changed we have to recompile.
+We can target individual file to watch mode.
+But in Bigger files thats not the case.
+
+### Compiling the entire project
+
+To initialize a project as a type script project, we just
+need to run.
+tsc --init
+
+We tell typescipt that everything that is typescript in this folder will be compiled as a js file.
+
+It will create a tsconfig.json file.
+
+Combining this with tsc -w
+Will then work with watch mode to see any changes we make to typescript file.
+
+### Including and Excluding files
+
+tsconfig.json is an essential file for typescript
+we can use 'exclude' property to exclude files and generally we exclude node_modules. // Would be default
+we can use 'include' property to include files and if we set include key then we have to specifically tell typescript what and which files needs to be included.
+
+### Setting up a compilation target
+
+"target": "es5"
+Here we say typescript to compile my javascript to version where browsers supports es5.
+
+### Understanding Typescript Core Libs
+
+How do typescript know that button exit or document exist. It is because we have some lib values that are already set by default.
+
+If we include lib we have to explicitly mention which apis are available.
+
+### More Configuration and Compilation options
+
+### Working with Source Map
+
+source map helps us with debugging and developement
+we will have additional map files generated which will act as a bridge between our typescript file and javascript file.
+
+We can then debug our ts file in developer tools.
+
+## rootDir and outDir
+
+outDir can be used to point where my javascript that are complied needs to be added.
+
+---
+
+## Module 14
+
+### React & Typescript
