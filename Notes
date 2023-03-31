@@ -235,3 +235,16 @@ outDir can be used to point where my javascript that are complied needs to be ad
 ## Module 14
 
 ### React & Typescript
+
+tsx files are files where you can write your HTML markup inside typescript or javascript.
+
+Type React.FC
+A functional component, a component will qualify as a functional component if the function that returns JSX.
+
+### User inputs with refs
+
+To caputre user inputs it is important to use some steps.
+We can use 'useRef' hook to get a ref object that will be helpful for us to submit any user input to submit or handle.
+So when we are working with forms and we require a connection between different form input element their we can use ref object.
+
+### Working with states and types
